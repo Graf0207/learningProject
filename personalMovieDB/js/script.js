@@ -51,5 +51,7 @@ personalMovieDB.movies[nameSecondFilm] = ratingSecondFilm;
 
 
 
-
 console.log(personalMovieDB);
+
+
+console.log(0 && 0);
