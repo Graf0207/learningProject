@@ -41,10 +41,10 @@
 //     'privat': false
 // };
 
-// const nameFirstFilm = prompt('Який один із фільмів ви нещодавно подивились', '');
+// const nameMovie = prompt('Який один із фільмів ви нещодавно подивились', '');
 // const ratingFirstFilm = prompt('Як би ви оцінили цей фільм?', '');
 
-// personalMovieDB.movies[nameFirstFilm] = ratingFirstFilm;
+// personalMovieDB.movies[nameMovie] = ratingFirstFilm;
 
 // const nameSecondFilm = prompt('Який ot один із фільмів ви нещодавно подивились', '');
 // const ratingSecondFilm = prompt('Як би ви оцінили цей фільм?', '');
@@ -78,8 +78,6 @@
 let numberOfFilms = prompt ('Скільки фільмів ви вже подивились?', '');
 
 
-// Second
-
 let personalMovieDB = {
     'count': numberOfFilms,
     'movies': {},
@@ -89,7 +87,47 @@ let personalMovieDB = {
 };
 
 
-while (numberOfFilms == false || numberOfFilms === null || numberOfFilms >= 50) {
+// ------------------- First version
+
+// while (numberOfFilms == false || numberOfFilms === null) {
+//     numberOfFilms = prompt ("Обов'язково введіть число. Скільки фільмів ви вже подивились?", "");
+// };
+
+
+// if (numberOfFilms < 10 ) {
+//     alert('Ви подивились мало фільмів')
+// }
+// else if (numberOfFilms >= 10 && numberOfFilms <= 30) {
+//     alert('Ви класичний глядач')
+// }
+// else if (numberOfFilms >= 30) {
+//     alert('Ви кіноман!')
+// }
+// else {
+//     alert('Виникла помилка!')
+// };
+
+// // console.log(numberOfFilms); //check the number of watched movies
+
+// for (let i = 0; i < 2; i++) {
+//     let nameMovie = prompt(`Який ${i+1}-ий із фільмів ви нещодавно подивились`, ``);
+//     let ratingMovie = prompt(`Як би ви оцінили цей фільм?`, ''); 
+
+//     while (!nameMovie || nameMovie.length >= 50) {
+//         nameMovie = prompt(`Який ${i+1}-ий із фільмів ви нещодавно подивились`, ``);
+//     };
+//     while (!ratingMovie) {
+//         ratingMovie = prompt(`Як би ви оцінили цей фільм?`, ``);
+//     };
+
+//     personalMovieDB.movies[nameMovie] = ratingMovie;
+// };
+// console.log(personalMovieDB);
+
+
+// ------------------- Second version
+
+while (numberOfFilms == false || numberOfFilms === null) {
     numberOfFilms = prompt ("Обов'язково введіть число. Скільки фільмів ви вже подивились?", "");
 };
 
@@ -107,24 +145,18 @@ else {
     alert('Виникла помилка!')
 };
 
+// console.log(numberOfFilms); //check the number of watched movies
 
+for (let i = 0; i < 2; i++) {
+    let nameMovie = prompt(`Який ${i+1}-ий із фільмів ви нещодавно подивились`, ``);
+    let ratingMovie = prompt(`Як би ви оцінили цей фільм?`, ''); 
 
-for (let i = 1; i < numberOfFilms; i++) {
-
-    console.log(numberOfFilms); //check the number of watched movies
+    if ( nameMovie != null && ratingMovie != null && nameMovie != '' && ratingMovie != '' && nameMovie.lastIndexOf <= 50 ) {
+        personalMovieDB.movies[nameMovie] = ratingMovie;
+    } else {
+        i = i - 1;
+    }
 
     
-
-    // const nameFirstFilm = prompt('Який один із фільмів ви нещодавно подивились', '');
-    // const ratingFirstFilm = prompt('Як би ви оцінили цей фільм?', '');
-    
-    // personalMovieDB.movies[nameFirstFilm] = ratingFirstFilm;
-    
-    // const nameSecondFilm = prompt('Який ot один із фільмів ви нещодавно подивились', '');
-    // const ratingSecondFilm = prompt('Як би ви оцінили цей фільм?', '');
-    
-    // personalMovieDB.movies[nameSecondFilm] = ratingSecondFilm;
-
 };
-
-// console.log(personalMovieDB);
+console.log(personalMovieDB);
