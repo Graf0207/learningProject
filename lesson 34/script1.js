@@ -10,14 +10,24 @@ const personalPlanPeter = {
             php: '10%'
         },
         exp: '1 month'
+    },
+    showAgeAndLangs: function (plan) {
+        const age = plan.age;
+        const {languages} = personalPlanPeter.skills;
+        let str = `Мне ${age} и я владею языками: `;
+
+        languages.forEach(function(lang) {
+            str += `${lang.toUpperCase()} `;
+        });
+        
+        return str
     }
 };
 
-// function showExperience(plan) {
-//     let {exp} = plan.skills;
-//     return exp
-// }
-// showExperience(personalPlanPeter);
+function showExperience(plan) {
+    let {exp} = plan.skills;
+    return exp
+}
 
 function showProgrammingLangs(plan) {
     let str = '';
@@ -25,7 +35,5 @@ function showProgrammingLangs(plan) {
     for (let key in programmingLangs) {
         str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
     };
-    console.log(str);
     return str
 };
-showProgrammingLangs(personalPlanPeter);
